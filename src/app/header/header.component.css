@@ -1,0 +1,27 @@
+#header {
+    background-color: #fff;
+    padding: 20px 0;
+    margin-top: 50px;
+    /* Add margin to avoid overlap with the fixed topbar */
+}
+
+#header .container {
+    display: flex;
+    justify-content: center;
+    /* Center the content horizontally */
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+    /* Adjust logo size */
+    margin-right: 20px;
+}
+
+.txt-red {
+    color: red;
+}
+
+.txt-green {
+    color: green;
+}
