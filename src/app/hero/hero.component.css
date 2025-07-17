@@ -1,45 +1,205 @@
 /* Hero Section Styling */
 #hero {
-    position: relative;
-    height: 100vh;
-    background: url('/assets/img/hero-background1.jpeg') no-repeat center center;
-
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-align: center;
+  position: relative;
+  height: 100vh;
+  overflow: hidden; 
+  color: white;
+  text-align: center;
 }
 
+.hero-video video {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  z-index: -1; 
+}
 
 .hero-content {
-    max-width: 800px;
-    /* Limit the width of the content */
-
-    padding: 20px;
+  max-width: 800px;
+  padding: 20px;
+  z-index: 1;
+  position: relative;
 }
 
 .hero-content h1 {
-    font-size: 3rem;
-    font-weight: bold;
+  font-size: 3rem;
+  font-weight: bold;
 }
 
 .hero-content p {
-    font-size: 1.2rem;
-    margin: 20px 0;
+  font-size: 1.2rem;
+  margin: 20px 0;
 }
 
 .cta-button {
-    padding: 12px 24px;
-    background-color: #007bff;
-    color: white;
-    text-decoration: none;
-    font-size: 1.1rem;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+  padding: 12px 24px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
 .cta-button:hover {
-    background-color: #0056b3;
+  background-color: #0056b3;
+}
+
+
+/* Members Section Styling */
+#members {
+  padding: 60px 0;
+  background-color: #f4f4f4;
+}
+
+.section-title h2 {
+  font-size: 13px;
+  letter-spacing: 1px;
+  font-weight: 700;
+  padding: 8px 20px;
+  margin: 0;
+  color: #333;
+  margin-bottom: 10px;
+  text-align: center;
+  border-radius: 50px;
+  display: block;
+  text-transform: uppercase;
+  color: var(--text-green);
+}
+
+.section-title p {
+  font-size: 1.2rem;
+  color: #777;
+  text-align: center;
+}
+
+/* Service Card Styling */
+.service-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+  padding-top: 50px;
+  height:102%;
+  width:103%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Icon Shield */
+.card-header {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #007bff;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.card-header .icon-box i {
+  font-size: 2rem;
+  color: white;
+}
+
+h4 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-top: 70px;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-body p {
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Circular Image */
+.feature-image img {
+  width: 150px; /* Set width */
+  height: 150px; /* Set height */
+  object-fit: cover; /* Maintain aspect ratio */
+  border-radius: 50%; /* Circular image */
+  margin-bottom: 20px;
+}
+
+/* Footer and Button */
+.card-footer {
+  padding: 10px 20px;
+  background-color: #f8f8f8;
+}
+
+.card-footer a {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.card-footer a:hover {
+  background-color: #0056b3;
+  transform: translateX(5px);
+}
+
+.card-footer i {
+  margin-left: 8px;
+}
+
+/* Hover Effect: Line Above the Card */
+.service-card:hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #007bff;
+  transition: width 0.4s ease;
+}
+
+.service-card:hover::before {
+  width: 100%;
+}
+
+/* Grid and Responsiveness */
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .service-card {
+    margin-bottom: 30px;
+    width: 100%; /* Full width on smaller screens */
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
 }

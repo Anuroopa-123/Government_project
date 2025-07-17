@@ -7,14 +7,14 @@
 .navbar ul {
   display: flex;
   justify-content: center; /* Centers the navbar links */
+  align-items: center;
   list-style-type: none;
+  width: 100%;
   margin: 0;
   padding: 0;
 }
 
-.navbar ul li {
-  margin: 0 20px; /* Adjust the margin for proper spacing between items */
-}
+
 
 .navbar ul li a {
   text-decoration: none;
