@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { UnionStateRelationsComponent } from "../union-state-relations/union-state-relations.component";
 
 @Component({
   selector: 'app-hero',
   standalone: true,
-  imports: [],
+  imports: [UnionStateRelationsComponent],
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.css'
 })
