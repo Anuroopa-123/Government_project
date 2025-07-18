@@ -3,7 +3,8 @@
   background-color: #f8f9fa;
   padding: 40px 0;
   color: #333;
-  margin-top: 50px;
+  margin-top: 20px;
+  position: relative;
 }
 
 #footer .container {
@@ -59,6 +60,8 @@
   color: white;
   padding: 20px 0;
   text-align: center;
+  position:relative;
+  bottom:10px;
 }
 
 .footer-bottom p {
