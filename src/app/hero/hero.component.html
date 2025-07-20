@@ -1,130 +1,56 @@
 <section id="hero" class="hero-section">
   <div class="hero-video">
-    <video autoplay loop muted>
-      <source src="assets/img/union_protal.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
+    <video
+      #heroVideo
+      [src]="videoUrl"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto"
+      style="width: 100%; height: 100%; object-fit: cover"
+    ></video>
   </div>
 
-  <div class="hero-content"></div>
+  <div class="hero-content">
+    <!-- Your heading / CTA here -->
+  </div>
 </section>
 
-<!-- Member Sections -->
+<!-- Rest of your HTML remains unchanged -->
+
 <section id="members" class="members-section">
-  <!-- Section Title -->
-  <div class="container section-title aos-init aos-animate" data-aos="fade-up">
+  <div class="container section-title" data-aos="fade-up">
     <h2>Members</h2>
-    <p>Committee Chairman &amp; Other Committee Members</p>
+    <p>Committee Chairman & Other Committee Members</p>
   </div>
 
-  <!-- Member Cards -->
-  <div
-    class="container aos-init aos-animate"
-    data-aos="fade-up"
-    data-aos-delay="100"
-  >
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
     <div class="row justify-content-center g-4">
-      <!-- Member 1 -->
-      <div class="col-lg-4 col-md-6">
+      <div
+        class="col-lg-4 col-md-6"
+        *ngFor="let member of members; let i = index"
+      >
         <div
-          class="service-card aos-init aos-animate"
+          class="service-card"
           data-aos="zoom-in"
-          data-aos-delay="100"
+          [attr.data-aos-delay]="100 + i * 200"
         >
           <div class="card-header">
             <div class="icon-box">
               <i class="bi bi-shield-check"></i>
             </div>
           </div>
-          <h4>Justice (Retd.) R. Kannan</h4>
+          <h4>{{ member.name }}</h4>
           <div class="card-body">
-            <p>
-              Justice R. Kannan is a retired High Court Judge with over 35 years
-              of experience in constitutional law, federal policy, and
-              administrative justice.
-            </p>
-            <div class="feature-image">
-              <img
-                src="assets/img/members1.jpg"
-                alt="Justice R. Kannan"
-                class="img-fluid"
-              />
+            <p [innerHTML]="member.description"></p>
+            <div class="feature-image" *ngIf="member.image">
+              <img [src]="member.image" [alt]="member.name" class="img-fluid" />
             </div>
           </div>
           <div class="card-footer">
             <a href="#" class="btn-explore">
-              Committee Chairman
-              <i class="bi bi-arrow-up-right"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Member 2 -->
-      <div class="col-lg-4 col-md-6">
-        <div
-          class="service-card aos-init aos-animate"
-          data-aos="zoom-in"
-          data-aos-delay="300"
-        >
-          <div class="card-header">
-            <div class="icon-box">
-              <i class="bi bi-shield-check"></i>
-            </div>
-          </div>
-          <h4>Dr. Lakshmi Narayanan (IAS, Retd.)</h4>
-          <div class="card-body">
-            <p>
-              Dr. Lakshmi Narayanan is a former IAS officer and policy advisor
-              with a specialization in fiscal federalism and governance reforms.
-            </p>
-            <div class="feature-image">
-              <img
-                src="assets/img/members2.jpg"
-                alt="Dr. Lakshmi Narayanan"
-                class="img-fluid"
-              />
-            </div>
-          </div>
-          <div class="card-footer">
-            <a href="#" class="btn-explore">
-              Committee Member
-              <i class="bi bi-arrow-up-right"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Member 3 -->
-      <div class="col-lg-4 col-md-6">
-        <div
-          class="service-card aos-init aos-animate"
-          data-aos="zoom-in"
-          data-aos-delay="500"
-        >
-          <div class="card-header">
-            <div class="icon-box">
-              <i class="bi bi-shield-check"></i>
-            </div>
-          </div>
-          <h4>Prof. K. Rajasekaran</h4>
-          <div class="card-body">
-            <p>
-              Prof. Rajasekaran is a noted constitutional scholar and public
-              policy expert with academic contributions in the field of federal
-              structures and legislative processes.
-            </p>
-            <div class="feature-image">
-              <img
-                src="assets/img/members3.jpg"
-                alt="Prof. K. Rajasekaran"
-                class="img-fluid"
-              />
-            </div>
-          </div>
-          <div class="card-footer">
-            <a href="#" class="btn-explore">
-              Committee Member
+              {{ member.role }}
               <i class="bi bi-arrow-up-right"></i>
             </a>
           </div>
@@ -149,23 +75,40 @@
         <!-- Ex CM Cards -->
         <div class="row">
           <!-- Announcement 1 -->
-          <div class="col-lg-6 col-md-12 d-flex align-items-stretch aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+          <div
+            class="col-lg-6 col-md-12 d-flex align-items-stretch aos-init aos-animate"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
             <div class="team-member">
               <div class="member-info">
                 <h4 class="pt-4 txt-blue">Thiru. C.N. Annadurai</h4>
                 <span>Former Chief Minister of Tamil Nadu (1967–1969)</span>
-                <p>We seek more powers for the states, not to weaken the Centre, but to strengthen true democracy.</p>
+                <p>
+                  We seek more powers for the states, not to weaken the Centre,
+                  but to strengthen true democracy.
+                </p>
               </div>
             </div>
           </div>
 
           <!-- Announcement 2 -->
-          <div class="col-lg-6 col-md-12 d-flex align-items-stretch aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+          <div
+            class="col-lg-6 col-md-12 d-flex align-items-stretch aos-init aos-animate"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
             <div class="team-member">
               <div class="member-info">
                 <h4 class="pt-4 txt-blue">Thiru. M. Karunanidhi</h4>
-                <span>Former Chief Minister of Tamil Nadu (Served 5 terms between 1969 and 2011)</span>
-                <p>Language is not a chain, but a choice that must be respected, for unity, not uniformity.</p>
+                <span
+                  >Former Chief Minister of Tamil Nadu (Served 5 terms between
+                  1969 and 2011)</span
+                >
+                <p>
+                  Language is not a chain, but a choice that must be respected,
+                  for unity, not uniformity.
+                </p>
               </div>
             </div>
           </div>
@@ -184,19 +127,27 @@
         <div class="marquee-container">
           <div class="marquee-content">
             <div class="marquee-item">
-              <a href="#historic-announcements">1) Links to Historic Announcements</a>
+              <a href="#historic-announcements"
+                >1) Links to Historic Announcements</a
+              >
             </div>
             <div class="marquee-item">
-              <a href="https://www.indiacode.nic.in/" target="_blank">2) Constitution of India – India Code Website</a>
+              <a href="https://www.indiacode.nic.in/" target="_blank"
+                >2) Constitution of India – India Code Website</a
+              >
             </div>
             <div class="marquee-item">
-              <a href="https://cadindia.clpr.org.in/" target="_blank">3) Constituent Assembly Debates</a>
+              <a href="https://cadindia.clpr.org.in/" target="_blank"
+                >3) Constituent Assembly Debates</a
+              >
             </div>
             <div class="marquee-item">
               <a href="#federal-setup">4) Federal Setup in Other Countries</a>
             </div>
             <div class="marquee-item">
-              <a href="#finance-commission-reports">5) Union Govt. Finance Commission Reports</a>
+              <a href="#finance-commission-reports"
+                >5) Union Govt. Finance Commission Reports</a
+              >
             </div>
           </div>
         </div>
