@@ -1,27 +1,69 @@
 #header {
-    background-color: #fff;
-    padding: 20px 0;
-    margin-top: 50px;
-    /* Add margin to avoid overlap with the fixed topbar */
+  background-color: #fff;
+  padding: 10px 0;
+  margin-top: 0;
 }
-
 #header .container {
-    display: flex;
-    justify-content: center;
-    /* Center the content horizontally */
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* vertical center */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+  gap: 10px; /* optional: small spacing between flex items */
 }
 
-.logo img {
-    height: 40px;
-    /* Adjust logo size */
-    margin-right: 20px;
+.logo.text-center {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Logos on left and right */
+.left-logos img,
+.right-logos img {
+  height: 79px; /* fixed height */
+  max-width: 100%; /* keep aspect ratio */
+  object-fit: contain;
+  margin-right: 10px;
 }
 
 .txt-red {
-    color: red;
+  color: red;
+  font-weight: bold;
+  font-size: 18px;
 }
 
 .txt-green {
-    color: green;
+  color: green;
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 4px;
+}
+
+/* Responsive for small screens */
+@media (max-width: 768px) {
+  #header .container {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .left-logos,
+  .right-logos {
+    margin: 10px 0;
+  }
+
+  .left-logos img,
+  .right-logos img {
+    height: 40px;
+    margin-right: 8px;
+  }
+
+  .logo.text-center {
+    flex: none;
+    margin: 10px 0;
+  }
 }
