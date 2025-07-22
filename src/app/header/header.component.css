@@ -1,7 +1,13 @@
 #header {
+
+    background-color: #fff;
+    padding: 20px 0;
+    margin-top: 20px;
+    /* Add margin to avoid overlap with the fixed topbar */
   background-color: #fff;
   padding: 10px 0;
   margin-top: 0;
+
 }
 #header .container {
   display: flex;

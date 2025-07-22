@@ -27,6 +27,18 @@
 .navbar ul li a.active {
   background-color: #007bff;
   color: #fff;
+  border-radius: 5px;
+}
+/* Ensure you have a top-to-bottom animation for the Assembly section */
+.aos-init[data-aos="fade-up"] {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.5s ease-out;
+}
+
+.aos-animate[data-aos="fade-up"] {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Mobile View */
