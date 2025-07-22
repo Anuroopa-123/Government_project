@@ -10,6 +10,12 @@ import { RegistrationComponent } from './registration/registration.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
+=======
+import { HeaderComponent } from './header/header.component';
+
+export const routes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'header', component: HeaderComponent },
   { path: 'navbar', component: NavbarComponent },
   { path: 'hero', component: HeroComponent },
   { path: 'unionstaterelations', component: UnionStateRelationsComponent },
